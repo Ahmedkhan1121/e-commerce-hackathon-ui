@@ -6,6 +6,8 @@ import FooterProducList from "@/components/Footer2/Footer2";
 // import { popin } from "@/utils/hepler";
 import TopBar from "@/components/TopBar/TopBar";
 import { popin } from "@/utils/helper";
+import Context from "@/Context/Context";
+import ProductContext from "@/Context/ProductContext";
 
 
 const geistSans = localFont({
@@ -34,10 +36,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${popin.className} antialiased`}
         >
+          <ProductContext>
+          {/* <Context> */}
         {/* <TopBar/> */}
-        {/* <HeaderProduct /> */}
+        <HeaderProduct />
         {children}
         {/* <FooterProducList/> */}
+        {/* </Context> */}
+        </ProductContext>
       </body>
     </html>
   );

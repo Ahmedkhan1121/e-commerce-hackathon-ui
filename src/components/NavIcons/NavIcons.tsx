@@ -6,13 +6,10 @@ import { CiMenuFries } from 'react-icons/ci';
 
 function NavIcons() {
   return (
-    <div className='flex gap-3'>
+    <div className='flex gap-3 max-[730px]:absolute right-14'>
       <IoIosSearch />
       <RiShoppingCart2Line />
       <CgProfile />
-      <div className='hidden'>
-      <CiMenuFries />
-      </div>
     </div>
   )
 }

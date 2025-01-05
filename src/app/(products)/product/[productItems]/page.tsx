@@ -2,7 +2,8 @@ import BrandDifferent from '@/components/BrandDifferent/BrandDifferent'
 import CeramicsProductList from '@/components/CeramicsProductList/CeramicsProductList'
 import HeroProductList from '@/components/HeroProductList/HeroProductList'
 import SignUp from '@/components/SignUp/SignUp'
-import { productList } from '@/utils/hepler'
+import { productList } from '@/utils/helper'
+// import { productList } from '../../../../utils/helper'
 import React from 'react'
 
 async function page({params}:{  params: Promise<{ productItems: string }>

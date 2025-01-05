@@ -3,7 +3,7 @@ import { navList } from '@/utils/helper';
 import Link from 'next/link'
 import React from 'react'
 
-function NavListAbout({onNav}:{onNav:boolean}) {
+function NavListAbout() {
   return (
     <ul className={`flex items-center justify-center p-4 gap-6 text-[#726E8D] `}>
      {

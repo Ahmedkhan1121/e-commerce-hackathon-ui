@@ -4,6 +4,7 @@ import "../globals.css";
 import { popin } from "@/utils/helper";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import Context from "@/Context/Context";
 // import { popin } from "@/utils/hepler";
 
 
@@ -33,9 +34,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${popin.className} antialiased`}
         >
+          <Context>
         <Header/>
         {children}
         <Footer/>
+        </Context>
       </body>
     </html>
   );

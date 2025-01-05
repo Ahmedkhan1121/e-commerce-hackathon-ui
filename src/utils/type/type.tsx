@@ -59,3 +59,13 @@ export interface productListType{
     name:string;
     price:string;
 }
+
+
+
+// product context type
+
+export interface ProductContextType{
+    productList:productListType[];
+    onHandlePrev: () => void;
+    navTogg:boolean;
+}

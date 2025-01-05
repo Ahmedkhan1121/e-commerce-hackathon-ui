@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react'
+// import React, { useContext, useState } from 'react'
 import { IoIosSearch } from "react-icons/io";
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
@@ -7,13 +7,20 @@ import { CgProfile } from "react-icons/cg";
 import Link from 'next/link';
 import { CiMenuBurger } from 'react-icons/ci';
 import NavListHome from '../ListItem/ListItem';
+import { useFurnContext } from '@/Context/Context';
+// import { HeaderContext } from '@/Context/Context';
 
 function Navbar() {
-  const [navList,setNavList]= useState<boolean>(false);
-  const onNavToggle = () => {
-    setNavList((prev) => !prev)
-    // alert(navList)
-  }
+
+  // const navContext = useContext(HeaderContext)
+
+  // custom hook
+  const homeContext=useFurnContext()
+  // const [navList,setNavList]= useState<boolean>(false);
+  // const onNavToggle = () => {
+  //   setNavList((prev) => !prev)
+  //   // alert(navList)
+  // }
 
   return (
     <nav className=''>
@@ -32,7 +39,7 @@ function Navbar() {
       <RiShoppingCart2Line />
       <CgProfile />
       </div>
-      <div className=" max-[670px]:block hidden" onClick={onNavToggle}>
+      <div className=" max-[670px]:block hidden" onClick={homeContext.onHomeToggle}>
       <CiMenuBurger />
       </div>
       </div>
@@ -42,7 +49,7 @@ function Navbar() {
 
     {/* navList2 */}
     
-    <NavListHome onNav={navList}/>
+    <NavListHome />
     
     </nav>
   )

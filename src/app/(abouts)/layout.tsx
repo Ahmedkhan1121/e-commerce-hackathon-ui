@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "../globals.css";
 import { popin } from "@/utils/helper";
 import HeaderAbout from "@/components/HeaderAbout/HeaderAbout";
+import Context from "@/Context/Context";
 // import { popin } from "@/utils/hepler";
 
 
@@ -32,10 +33,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${popin.className} antialiased`}
         >
-        
+        <Context>
         <HeaderAbout/>
         {children}
         {/* <Footer/> */}
+        </Context>
       </body>
     </html>
   );
