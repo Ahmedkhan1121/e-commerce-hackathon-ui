@@ -1,6 +1,4 @@
 import React from 'react'
-import CartProduct from '../CartProduct/CartProduct'
-import CartQuantityBtn from '../CartQuantityBtn/CartQuantityBtn'
 import CartTableData from '../CartTableData/CartTableData'
 
 function CartTable() {
@@ -21,9 +19,9 @@ function CartTable() {
         <CartTableData/>
         </div>
         {/* Total Price */}
-        <div>
+        {/* <div>
 
-        </div>
+        </div> */}
 
     </div>
   )

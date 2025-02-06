@@ -3,7 +3,7 @@ import { useFurnContext } from '@/Context/Context';
 // import { HeaderContext } from '@/Context/Context';
 import { navList } from '@/utils/helper';
 import Link from 'next/link'
-import React, { useContext } from 'react'
+// import React, { useContext } from 'react'
 
 function NavListHome() {
   

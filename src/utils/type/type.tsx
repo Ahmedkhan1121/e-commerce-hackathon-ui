@@ -1,5 +1,4 @@
 import React from "react";
-import { MdExposurePlus1 } from "react-icons/md";
 
 export interface NavListType{
     Link:string,
@@ -73,12 +72,12 @@ export interface ProductContextType{
 
 // add to cart
 
-export interface InitialData{
-    card:productListType[];
-    addToCart:productListType[]
-}
-export interface Action{
-    type:string;
-    payload:any;
-}
+// export interface InitialData{
+//     card:productListType[];
+//     addToCart:productListType[]
+// }
+// export interface Action{
+//     type:string;
+//     payload:any;
+// }
 

@@ -1,5 +1,5 @@
 "use client"
-import { error } from 'console';
+// import { error } from 'console';
 import React, { createContext, useContext, useState} from 'react'
 interface ContextDataType{
   // home
