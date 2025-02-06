@@ -4,6 +4,7 @@ import { RiShoppingCart2Line } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import { CiMenuFries } from "react-icons/ci";
 import { useFurnContext } from "@/Context/Context";
+import Link from "next/link";
 
 
 function NavAboutIcons() {
@@ -12,7 +13,7 @@ function NavAboutIcons() {
  return (
     <div className='flex gap-3 max-[730px]:absolute right-14 max-[740px]:right-3 '>
       <IoIosSearch />
-      <RiShoppingCart2Line />
+      <Link href={`/cart`}><RiShoppingCart2Line /></Link>
       <CgProfile />
       <div className='hidden max-[740px]:flex' onClick={aboutContext.onAboutToggle}>
             <CiMenuFries />

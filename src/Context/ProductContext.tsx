@@ -1,9 +1,22 @@
 "use client"
 
-import { ProductContextType, productListType } from "@/utils/type/type"
-import { createContext, useContext, useEffect, useState } from "react"
+import { Action, InitialData, ProductContextType, productListType } from "@/utils/type/type"
+import { createContext, useContext, useEffect, useReducer, useState } from "react"
 
 const ProductCont =createContext<ProductContextType|null>(null)
+
+const initialData:InitialData={
+ card:[],
+ addToCart:[],
+}
+
+const actionCart = {
+    LOAD_CART_LIST:'LOAD_CART_LIST',
+    INCREMENT:'INCREMENT',
+    DECREMENT:'DECREMENT',
+    ADDTOCART:'ADDTOCART',
+}
+
 
 function ProductContext({children}:{children: React.ReactNode;}) {
 
@@ -12,6 +25,8 @@ function ProductContext({children}:{children: React.ReactNode;}) {
            setNavTogg((prev) => !prev)
      } 
 
+
+     const {LOAD_CART_LIST,ADDTOCART,DECREMENT,INCREMENT} = actionCart;
     // ya par usstate banega q ka productApi ke ander se fetchProduct k bhair nekalna he
     const [productList,setProductList] =useState<productListType[]>([])
 
@@ -30,6 +45,20 @@ function ProductContext({children}:{children: React.ReactNode;}) {
    useEffect(()=>{
     productApi('/api/product')
    },[])
+
+   //add to cart
+   const [state,dispatch]=useReducer(reducerCard,initialData)
+   function reducerCard(state:InitialData,action:Action):InitialData{
+
+    switch (action.type) {
+        case LOAD_CART_LIST:
+         return{...state,card:action.payload}
+    
+        default:
+            return state;
+    }
+   }
+
 
   return (
   <ProductCont.Provider value={{productList,navTogg,onHandlePrev}}>{children}</ProductCont.Provider>

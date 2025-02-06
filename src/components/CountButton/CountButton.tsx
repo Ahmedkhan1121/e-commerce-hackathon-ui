@@ -21,7 +21,7 @@ function CountButton() {
     }
     
   return (
-    <div className='flex items-center justify-between py-[12px] px-[16px] w-[122px] bg-[#F9F9F9]  '>
+    <div className='flex items-center justify-center gap-5 py-[12px] rounded-md   w-[122px] bg-[#f9f9f9] max-[820px]:w-[100px] max-[750px]:w-[90px] max-[820px]:gap-4 max-[370px]:w-[300px]  max-[370px]:py-[14px] max-[365px]:w-[280px] max-[340px]:w-[250px] max-[310px]:w-[200px]'>
      <button className='text-[#CAC6DA] flex items-center 'onClick={onDncriment}><FaMinus /></button>
      <h2>{countValue}</h2>
      <button className='text-[#CAC6DA] flex items-center' onClick={onIncriment}><FiPlus /></button> 
